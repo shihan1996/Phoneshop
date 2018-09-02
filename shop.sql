@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2018 at 07:20 AM
+-- Generation Time: Sep 02, 2018 at 03:42 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -37,6 +37,14 @@ CREATE TABLE `invoice` (
   `total` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`id`, `customer`, `item`, `qty`, `price`, `total`) VALUES
+(7, 'Saman', 'Batteries', 1, '400', '400'),
+(8, 'Amal', 'Ram', 3, '1', '3');
+
 -- --------------------------------------------------------
 
 --
@@ -57,7 +65,8 @@ CREATE TABLE `item` (
 INSERT INTO `item` (`id`, `itemname`, `des`, `price`) VALUES
 (16, 'Ram', 'qwerty', '1500'),
 (17, 'Rom', 'asdf', '1600'),
-(18, 'Samsung display', 'zxcvb', '800');
+(18, 'Samsung display', 'zxcvb', '800'),
+(20, 'Batteries', 'dfghjk', '400');
 
 -- --------------------------------------------------------
 
@@ -67,7 +76,7 @@ INSERT INTO `item` (`id`, `itemname`, `des`, `price`) VALUES
 
 CREATE TABLE `stock` (
   `id` int(11) NOT NULL,
-  `item` varchar(11) NOT NULL,
+  `item` varchar(100) NOT NULL,
   `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -76,9 +85,10 @@ CREATE TABLE `stock` (
 --
 
 INSERT INTO `stock` (`id`, `item`, `qty`) VALUES
-(10, 'Ram', 3),
+(10, 'Ram', 0),
 (11, 'Rom', 3),
-(12, 'Samsung dis', 4);
+(12, 'Samsung display', 4),
+(13, 'Batteries', 21);
 
 --
 -- Indexes for dumped tables
@@ -110,19 +120,19 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

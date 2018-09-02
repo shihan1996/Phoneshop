@@ -1,6 +1,5 @@
 <?php include("server.php"); 
 
-//session_start(); //Session already started
 if(!isset($_SESSION['username'])){
     header('location: login.php');
 }
@@ -58,17 +57,17 @@ if(isset($_GET['edit'])){
 
         <div class="input-group">
             <label>ItemName</label>
-            <input type="text" name="sitemname" value="<?php echo $itemname; ?>">     
+            <input type="text" name="sitemname" value="<?php echo $itemname; ?>" required>     
         </div>
 
         <div class="input-group">
             <label>Price</label>
-            <input type="real" name="snprice" value="<?php echo $price; ?>">     
+            <input type="real" name="snprice" value="<?php echo $price; ?>" required>     
         </div>
 
         <div class="input-group">
             <label>Quantity</label>
-            <input type="real" name="snqty">     
+            <input type="real" name="snqty" required>     
         </div>
 
         <div>

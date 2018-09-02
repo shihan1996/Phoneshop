@@ -1,6 +1,5 @@
 <?php include("server.php"); 
 $price=0;
-//session_start(); //Session already started
 if(!isset($_SESSION['username'])){
     header('location: login.php');
 }
@@ -20,7 +19,7 @@ if(isset($_GET['edit'])){
 <html>
 <head>
     
-    <title>Stock Details</title>
+    <title>Purchasing Invoice</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,9 +48,19 @@ if(isset($_GET['edit'])){
                 <tr>
                     <td><?php echo $row['itemname']; ?></td>
                     <td><?php echo number_format($row['price'],2); ?></td>
+                    
+                    <td><?php 
+                    $item=$row['itemname'];    
+                    $results5=mysqli_query($db, "SELECT * FROM stock WHERE item='$item'");
+                    $rec = mysqli_fetch_array($results5);
+                    $cqty=$rec['qty'];
 
-                    <td>
-                        <a class="edit_btn "href="invoice.php?edit=<?php echo $row['id']; ?>">Select</a>
+                    if($cqty>0){
+                    ?>
+                        <a class="edit_btn "href="invoice.php?edit=<?php echo $row['id']; ?>">select</a>
+                    <?php }else{?>
+                        <a class="outofstck_btn "href="#">Out of stock</a>
+                    <?php }?>
                     </td>
                 </tr>
             <?php } ?>

@@ -1,5 +1,6 @@
 <?php
-//Login Session
+//Login 
+
 session_start();
 $error="";
 //get values from the login.php
@@ -30,10 +31,7 @@ $db=mysqli_connect('localhost','root','','logininfo');
 
 }
 
-
-
-
-
+//Other Functions
 
 //initialize variables
 $itemname="";
@@ -103,10 +101,8 @@ if(isset($_POST['ssave'])){
     header('location: viewstock.php');//redirect to the main page after inserting
 }
 
-//retrieve records
+//retrieve stock records
 $results2=mysqli_query($db, "SELECT * FROM stock");
-
-
 
 if(isset($_POST['isave'])){
     $itemname=$_POST['itemname'];
@@ -139,11 +135,7 @@ if(isset($_POST['isave'])){
 }
 
 
-//retrieve records
+//retrieve invoice records
 $results3=mysqli_query($db, "SELECT * FROM invoice");
-
-
-
-
 
 ?>

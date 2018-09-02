@@ -1,19 +1,8 @@
 <?php include("server.php"); 
 
-//session_start(); //Session already started
 if(!isset($_SESSION['username'])){
     header('location: login.php');
 }
-//fetch the record to be updated
-// if(isset($_GET['edit'])){
-//     $id = $_GET['edit'];
-//     $edit_state = true;
-//     $rec = mysqli_query($db, "SELECT * FROM item WHERE id=$id");
-//     $record = mysqli_fetch_array($rec);
-//     // $itemname = $record['itemname'];
-//     // $price = $record['price'];
-//     // $id = $record['id'];
-// }
 
 ?>
 
@@ -31,7 +20,6 @@ if(!isset($_SESSION['username'])){
     <a class="btn" href="stock.php?>">Add Stock</a>
 
 
-    <form>
     <table>
         <thead>
             <tr>
@@ -51,6 +39,5 @@ if(!isset($_SESSION['username'])){
         </tbody>
     </table>
 
-    </form>
 </body>
 </html>

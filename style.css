@@ -7,6 +7,7 @@ table{
     margin: 30px auto;
     border-collapse: collapse;
     text-align: left;
+    border: 1px solid #bbbbbb;
 }
 
 tr{
@@ -14,9 +15,9 @@ tr{
 }
 
 th, td{
-    border: none;
+    border: 1px solid #bbbbbb;
     height: 30px;
-    padding: 2px;
+    padding: 5px;
 }
 
 form{
@@ -64,6 +65,14 @@ tr:hover{
     text-decoration: none;
     padding: 2px 5px;
     background: #2e8b57;
+    color: white;
+    border-radius: 3px;
+}
+
+.outofstck_btn{
+    text-decoration: none;
+    padding: 2px 5px;
+    background: #800000;
     color: white;
     border-radius: 3px;
 }

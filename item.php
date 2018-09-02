@@ -1,6 +1,5 @@
 <?php include("server.php"); 
 
-//session_start(); //Session already started
 if(!isset($_SESSION['username'])){
     header('location: login.php');
 }
@@ -46,14 +45,11 @@ if(isset($_GET['edit'])){
                 <tr>
                     <td><?php echo $row['itemname']; ?></td>
                     <td><?php echo $row['des']; ?></td>
-                    <td><?php echo $row['price']; ?></td>
+                    <td><?php echo number_format($row['price'],2); ?></td>
                     
 
                     <td>
                         <a class="edit_btn "href="item.php?edit=<?php echo $row['id']; ?>">Edit</a>
-                    </td>
-
-                    <td>
                         <a class="del_btn" href="item.php?del=<?php echo $row['id']; ?>">Delete</a>
                     </td>
                 </tr>
