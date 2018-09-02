@@ -7,7 +7,7 @@ if(!isset($_SESSION['username'])){
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
-    <title>Phoneshop</title>
+    <title>Phone shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
